@@ -1,6 +1,11 @@
 import './search.styles.css'
+import { ChangeEvent } from 'react';
 
-const Search = (props)=> 
+type SearchBoxProps={ 
+  searchChangeHandler:  (event: ChangeEvent<HTMLInputElement>) => void
+}
+
+const Search = (props: SearchBoxProps)=> 
 { 
       const {  searchChangeHandler } = props; 
         //console.log('search' + searchField + 'search');
@@ -8,7 +13,7 @@ const Search = (props)=>
             <input type="search"
                    className="search-box"
                    placeholder="search monsters"
-                   onChange = { (event) => { searchChangeHandler(event) } } 
+                   onChange = {searchChangeHandler} 
                    />           
         );
   
